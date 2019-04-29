@@ -38,9 +38,32 @@ const writeCounter = (count, callback) => {
 
 // Public API - Fix this function //////////////////////////////////////////////
 
-exports.getNextUniqueId = () => {
-  counter = counter + 1;
-  return zeroPaddedNumber(counter);
+// exports.getNextUniqueId = () => {
+//   counter = counter + 1;
+//   return zeroPaddedNumber(counter);
+// };
+
+
+// 1) should use error first callback pattern
+// 2) should give an id as a zero padded string
+// 3) should give the next id based on the count in the file
+// 4) should update the counter file with the next value
+
+exports.getNextUniqueId = (err, readCounter) => {
+  if(err){
+    console.log('error', error);
+  }
+  return readCounter = (err, writeCounter) => {
+    if(err){
+      console.log('error', error);
+    } 
+    return writeCounter = (counter, zeroPaddedNumber) => {
+      if(err){
+        console.log('error', error);
+      }
+      return zeroPaddedNumber(counter);
+    }
+  };
 };
 
 
