@@ -49,22 +49,22 @@ const writeCounter = (count, callback) => {
 // 3) should give the next id based on the count in the file
 // 4) should update the counter file with the next value
 
-exports.getNextUniqueId = (err, readCounter) => {
-  if(err){
-    console.log('error', error);
-  }
-  return readCounter = (err, writeCounter) => {
+exports.getNextUniqueId = (callback) => {
+  readCounter((err, counter) => {
     if(err){
-      console.log('error', error);
-    } 
-    return writeCounter = (counter, zeroPaddedNumber) => {
-      if(err){
-        console.log('error', error);
-      }
-      return zeroPaddedNumber(counter);
+      return ('null');
+    } else {
+      counter ++;
+      writeCounter(counter, (err, string) => {
+        if(err){
+          return ('null');
+        } else {
+          return callback(null, string);
+        }
+      })
     }
-  };
-};
+  })
+}
 
 
 
