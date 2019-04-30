@@ -23,6 +23,7 @@ exports.create = (text, callback) => {
   });
 };
 
+
 exports.readAll = (callback) => {
   var data = _.map(items, (text, id) => {
     return { id, text };
